@@ -8,7 +8,8 @@ var BlogFormView = Backbone.View.extend({
   tagName: "form",
   className: "form-horizontal blog-form",
   events: {
-    'submit': "blogSubmit"
+    'submit': "blogSubmit",
+
   },
   initialize: function(){
     this.render();
@@ -57,4 +58,4 @@ var ButtonView = Backbone.View.extend({
 module.exports = {
   ButtonView: ButtonView,
   BlogFormView: BlogFormView
-}
+};
