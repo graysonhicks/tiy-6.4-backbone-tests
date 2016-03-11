@@ -38,17 +38,26 @@ var ButtonView = Backbone.View.extend({
     this.listenTo(this.collection, 'error', this.errorButton );
   },
   waitingButton: function(){
+    $('.main-panel').removeClass('panel-info');
+    $('.main-panel').addClass('panel-muted');
+    $('.panel-title').text('Waiting!');
     this.$el.removeClass('btn-default');
     this.$el.addClass('btn-muted');
     this.$el.text('Waiting!');
   },
   successButton: function(){
+    $('.main-panel').removeClass('panel-muted');
+    $('.main-panel').addClass('panel-success');
+    $('.panel-title').text('Blog Post Submitted!');
     this.$el.removeClass('btn-default');
     this.$el.addClass('btn-success');
     this.$el.text('Submitted!');
     this.$el.attr('disabled', true);
   },
   errorButton: function(){
+    $('.main-panel').removeClass('panel-muted panel-info panel-succes');
+    $('.main-panel').addClass('panel-danger');
+    $('.panel-title').text('Error!');
     this.$el.removeClass('btn-default');
     this.$el.addClass('btn-danger');
     this.$el.text('Error!');
