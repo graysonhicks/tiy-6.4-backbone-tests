@@ -53,6 +53,8 @@ var ResponseFormView = Backbone.View.extend({
   },
   changeButton: function(){
     $('.add-button').addClass('btn-success');
+    $('.add-button').text('Added!');
+    $('.add-button').attr('disabled', true);
   }
 });
 
