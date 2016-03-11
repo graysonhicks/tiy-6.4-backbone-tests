@@ -4,7 +4,6 @@ var Backbone = require('backbone');
 var handlebars = require('handlebars');
 
 var blogFormTemplate = require('../templates/blogformtemplate.hbs');
-var buttonTemplate = require('../templates/button.hbs');
 
 var BlogModel = Backbone.Model.extend({
   initialize: function(){
@@ -14,7 +13,7 @@ var BlogModel = Backbone.Model.extend({
 
 var BlogCollection = Backbone.Collection.extend({
   model: BlogModel,
-  url: 'http://tiny-lasagna-server.herokuapp.com/collections/graysonhicks/'
+  url: 'http://tiny-lasagna-server.herokuapp.com/collections/graysonhicks/blog/'
 });
 
 var BlogFormView = Backbone.View.extend({
