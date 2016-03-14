@@ -5,10 +5,6 @@ var Backbone = require('backbone');
 var Views = require('./views/views.js');
 var Models = require('./models/models.js');
 
-
-var contactBook = new Models.ContactCollection();
-var responseView = new Views.ResponseFormView({collection: contactBook});
-
 var Router = Backbone.Router.extend({
 
   routes: {
@@ -22,18 +18,21 @@ var Router = Backbone.Router.extend({
   /*
    * Route handlers
    */
-  // initialize: function(){
-  //
-  // },
+  initialize: function(){
+    this.contactBook = new Models.ContactCollection();
+
+    var responseView = new Views.ResponseFormView({collection: this.contactBook});
+
+  },
   index: function(){
-    var indexView = new Views.ContactFormView({collection: contactBook});
-    $('.main-content').html(indexView.render().el);
+    var indexView = new Views.ContactFormView({collection: this.contactBook});
+    this.showView(indexView);
   },
 
   response: function() {
-
+    var responseView = new Views.ResponseFormView({collection: this.contactBook});
     console.log('response');
-    this.showView(responseView);
+    this.showView(responseView.render());
   },
   /*
    * Helper functions

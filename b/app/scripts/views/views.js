@@ -41,11 +41,9 @@ var ResponseFormView = Backbone.View.extend({
   },
   initialize: function(){
     console.log('initialize');
-    this.listenTo(this.collection, 'add', this.render);
   },
-  render: function(contact){
-    console.log(contact);
-    this.$el.html(responseFormTemplate(contact.toJSON()));
+  render: function(){
+    this.$el.html(responseFormTemplate(this.collection.last().toJSON()));
     return this;
   },
   goBack: function(){
