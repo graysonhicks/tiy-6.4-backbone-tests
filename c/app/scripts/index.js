@@ -12,7 +12,7 @@ var blogPosts = new models.BlogCollection();
 
 
 
-// $(".panel-default").dotdotdot({
+// $(".panel-default").dotdotdot({ // this plugin messed up the rendering
 //   watch: true,
 //   height: 50
 // });
